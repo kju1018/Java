@@ -35,6 +35,7 @@ public class Exam01 {
 		int var8 = var4 % var5;
 		System.out.println("var8: " + var8);
 		
+		
 	}
 
 }
