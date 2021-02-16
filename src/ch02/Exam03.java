@@ -25,7 +25,8 @@ public class Exam03 {
 		int var7 = 10;
 		double var8 = 1.5;
 		double var9 = var7 + var8;
-
+		
+		
 		
 	}
 
