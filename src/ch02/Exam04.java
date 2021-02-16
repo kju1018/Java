@@ -14,7 +14,7 @@ public class Exam04 {
 		String var2 = var1 + 5;
 		System.out.println("var2: " + var2);
 		
-		
+
 		//문자열을 정수로 변경해서 연산
 		int var3 = Integer.parseInt(var1) + 5;
 		System.out.println("var3: " + var3);
