@@ -33,7 +33,8 @@ public class Exam02 {
 		double var9 = 3.14;
 		int var10 = (int) var9;
 		
-		
+		String a = "asd";
+	
 
 	}
 
