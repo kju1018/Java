@@ -7,11 +7,11 @@ public class Teamprojects2 {
 	public static void main(String[] args) {
 		boolean run = true;
 		String[][] boardArray = new String[100][5];
-		// ëª¨ë“  boardArray[0 ~ 99]ê¹Œì§€ëŠ” ìƒì„± ì•ˆì— ë‚´ìš©ì€ null
-		// boardArray[0 ~ 99] = nullë¡œ ê²€ì‚¬í• ì‹œ number ì´í›„ëŠ” nullì´ ì•„ë‹˜
+		// ¸ğµç boardArray[0 ~ 99]±îÁö´Â »ı¼º ¾È¿¡ ³»¿ëÀº null
+		// boardArray[0 ~ 99] = null·Î °Ë»çÇÒ½Ã number ÀÌÈÄ´Â nullÀÌ ¾Æ´Ô
 		Scanner scanner = new Scanner(System.in);
-		int number = 4;// ë‹¤ìŒ ë²ˆí˜¸
-		int end = 2; //ë°°ì—´ ë ìœ„ì¹˜
+		int number = 4;// ´ÙÀ½ ¹øÈ£
+		int end = 2; //¹è¿­ ³¡ À§Ä¡
 
 		for (int i = 0; i < 3; i++) {
 			boardArray[i][0] = "" + (i + 1);
@@ -23,9 +23,9 @@ public class Teamprojects2 {
 
 		while (run) {
 			System.out.println("--------------------------------------------------------------------------");
-			System.out.println("1.ëª©ë¡ | 2.ìƒì„±(Create) | 3.ì½ê¸°(Read) | 4.ìˆ˜ì •(Update) | 5.ì‚­ì œ(Delete) | 6.ì¢…ë£Œ");
+			System.out.println("1.¸ñ·Ï | 2.»ı¼º(Create) | 3.ÀĞ±â(Read) | 4.¼öÁ¤(Update) | 5.»èÁ¦(Delete) | 6.Á¾·á");
 			System.out.println("--------------------------------------------------------------------------");
-			System.out.print("ë©”ë‰´ì„ íƒ> ");
+			System.out.print("¸Ş´º¼±ÅÃ> ");
 
 			int selectMenu = Integer.parseInt(scanner.nextLine());
 
@@ -33,11 +33,11 @@ public class Teamprojects2 {
 
 			} else if (selectMenu == 2) {
 
-				System.out.print("ì œëª©: ");
+				System.out.print("Á¦¸ñ: ");
 				String title = scanner.nextLine();
-				System.out.print("ë‚´ìš©: ");
+				System.out.print("³»¿ë: ");
 				String contents = scanner.nextLine();
-				System.out.print("ê¸€ì“´ì´: ");
+				System.out.print("±Û¾´ÀÌ: ");
 				String name = scanner.nextLine();
 
 				for (int i = 0; i < boardArray.length; i++) {
@@ -55,26 +55,26 @@ public class Teamprojects2 {
 					}
 				}
 			} else if (selectMenu == 3) {
-				System.out.print("ë²ˆí˜¸: ");
+				System.out.print("¹øÈ£: ");
 				int selectNumber = Integer.parseInt(scanner.nextLine());
 				
 				
 
 				if (selectNumber <= 0 || selectNumber >= number) {
-					System.out.println("ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+					System.out.println("±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 					System.out.println();
 				} else if (boardArray[selectNumber - 1][0] == null) {
-					System.out.println("ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+					System.out.println("±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 					System.out.println();
 				} else {
 
 					System.out.println();
-					System.out.println("ì œëª©: " + boardArray[selectNumber - 1][1]);
-					System.out.println("ë‚´ìš©: " + boardArray[selectNumber - 1][2]);
-					System.out.println("ê¸€ì“´ì´: " + boardArray[selectNumber - 1][3]);
+					System.out.println("Á¦¸ñ: " + boardArray[selectNumber - 1][1]);
+					System.out.println("³»¿ë: " + boardArray[selectNumber - 1][2]);
+					System.out.println("±Û¾´ÀÌ: " + boardArray[selectNumber - 1][3]);
 
 					int view = Integer.parseInt(boardArray[selectNumber - 1][4]) + 1;
-					System.out.println("ì¡°íšŒìˆ˜: " + view);
+					System.out.println("Á¶È¸¼ö: " + view);
 					boardArray[selectNumber - 1][4] = String.valueOf(view);
 
 					System.out.println();
@@ -83,26 +83,26 @@ public class Teamprojects2 {
 
 			} else if (selectMenu == 4) {
 				System.out.println();
-				System.out.print("ë²ˆí˜¸: ");
+				System.out.print("¹øÈ£: ");
 				int selectNumber = Integer.parseInt(scanner.nextLine());
 
 				if (selectNumber <= 0 || selectNumber >= number) {
-					System.out.println("ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+					System.out.println("±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 					System.out.println();
 					continue;
 				} else if (boardArray[selectNumber - 1][0] == null) {
-					System.out.println("ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+					System.out.println("±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 					System.out.println();
 					continue;
 				} else
-					System.out.println("ê¸°ì¡´ì œëª©: " + boardArray[selectNumber - 1][1]);
-				System.out.print("ìˆ˜ì •ì œëª©: ");
+					System.out.println("±âÁ¸Á¦¸ñ: " + boardArray[selectNumber - 1][1]);
+				System.out.print("¼öÁ¤Á¦¸ñ: ");
 				String editTitle = scanner.nextLine();
 				if (!editTitle.equals("")) {
 					boardArray[selectNumber - 1][1] = editTitle;
 				}
-				System.out.println("ê¸°ì¡´ë‚´ìš©: " + boardArray[selectNumber - 1][2]);
-				System.out.print("ìˆ˜ì •ë‚´ìš©: ");
+				System.out.println("±âÁ¸³»¿ë: " + boardArray[selectNumber - 1][2]);
+				System.out.print("¼öÁ¤³»¿ë: ");
 				String editContent = scanner.nextLine();
 				if (!editContent.equals("")) {
 					boardArray[selectNumber - 1][2] = editContent;
@@ -110,15 +110,15 @@ public class Teamprojects2 {
 
 			} else if (selectMenu == 5) {
 				System.out.println();
-				System.out.print("ë²ˆí˜¸: ");
+				System.out.print("¹øÈ£: ");
 				int selectNumber = Integer.parseInt(scanner.nextLine());
 
 				if (selectNumber <= 0 || selectNumber >= number) {
-					System.out.println("ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+					System.out.println("±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 					System.out.println();
 					continue;
 				} else if (boardArray[selectNumber - 1][0] == null) {
-					System.out.println("ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+					System.out.println("±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 					System.out.println();
 					continue;
 				} else {
@@ -138,7 +138,7 @@ public class Teamprojects2 {
 			}
 			System.out.println();
 			System.out.println("---------------------------------------------------------------------");
-			System.out.println("   ë²ˆí˜¸   |     ì œëª©     |          ë‚´ìš©          |   ê¸€ì“´ì´   |   ì¡°íšŒìˆ˜   ");
+			System.out.println("   ¹øÈ£   |     Á¦¸ñ     |          ³»¿ë          |   ±Û¾´ÀÌ   |   Á¶È¸¼ö   ");
 			System.out.println("---------------------------------------------------------------------");
 
 			for (int i = end ; i >= 0; i--) {
@@ -156,7 +156,7 @@ public class Teamprojects2 {
 
 		}
 
-		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
+		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
 
 	}
 
