@@ -1,4 +1,4 @@
-package ch06.exam05;
+package ch06.exam06;
 
 public class Korean {
 	// Field
@@ -9,16 +9,15 @@ public class Korean {
 
 	// Constructor Overloading
 	Korean() {
+		this("¾Æ¹«°³", "000000-0000000", 1);
 	}
 
 	Korean(String name) {
-		this.name = name;
+		this(name, "000000-0000000", 1);
 	}
 
 	Korean(String name, String ssn) {
-	
-		this.name = name;
-		this.ssn = ssn;
+		this(name, ssn, 1);
 	}
 
 	Korean(String name, String ssn, int age) {

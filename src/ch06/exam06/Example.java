@@ -1,4 +1,4 @@
-package ch06.exam05;
+package ch06.exam06;
 
 public class Example {
 
@@ -11,13 +11,7 @@ public class Example {
 		
 //		Korean k5 = new Korean("±è¹Î¼®", 25, "123456-1234567");
 		
-		for(int i = 0 ; i<10;i++) {
-			System.out.print(i+" ");
-		}
-		System.out.println();
-		for(int i = 0 ; i<10; ++i) {
-			System.out.print(i+" ");
-		}
+	
 	}
 
 }

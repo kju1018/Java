@@ -177,5 +177,12 @@ public class Teamprojects1 {
 		System.out.println("프로그램 종료");
 
 	}
+	
+	
+	//....
+	//.x..
+	//.xx.
+	//.xxx
+	//이렇게 될 경우 end관리는?
 
 }
