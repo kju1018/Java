@@ -16,9 +16,10 @@ public class Exam02 {
 		boolean var8 = var1 <= var2; // true
 		boolean var9 = !(var1 == var2); // true
 		boolean var10 = (var1 == var2 || var1 < var2); // true
-		boolean var11 = (var1 == var2 && var1 < var2); // false 
+		boolean var11 = (var1 == var2 && var1 < var2); // false
 
-		//집에서 복습 
+
+
 	}
 
 }
