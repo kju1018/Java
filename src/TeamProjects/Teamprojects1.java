@@ -54,7 +54,7 @@ public class Teamprojects1 {
 				System.out.print("번호: ");
 				String selectNumber = scanner.nextLine();
 
-				for (int i = 0; i <= 100; i++) {
+				for (int i = 0; i < 100; i++) {
 					if (boardArray[i][0] != null) {
 						if (boardArray[i][0].equals(selectNumber)) {
 							System.out.println();
@@ -76,7 +76,7 @@ public class Teamprojects1 {
 				System.out.print("번호: ");
 				String selectNumber = scanner.nextLine();
 
-				for (int i = 0; i <= 100; i++) {
+				for (int i = 0; i < 100; i++) {
 					if (boardArray[i][0] != null) {
 						if (boardArray[i][0].equals(selectNumber)) {
 							System.out.println();
@@ -96,7 +96,9 @@ public class Teamprojects1 {
 							break;
 						}
 					}
-					/* if (i == end) 해당 번호 글 없음 */
+					if(i == 99) {
+						System.out.println("해당 번호의 글이 없습니다.");
+					}
 				}
 
 			} else if (selectMenu == 5) {
