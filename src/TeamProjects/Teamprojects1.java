@@ -11,7 +11,6 @@ public class Teamprojects1 {
 		// boardArray[0 ~ 99] = null로 검사할시 number 이후는 null이 아님
 		Scanner scanner = new Scanner(System.in);
 		int number = 4;// 다음 번호
-		int end = 2; // 배열 끝 위치
 
 		for (int i = 0; i < 3; i++) {
 			boardArray[i][0] = "" + (i + 1);
@@ -47,28 +46,24 @@ public class Teamprojects1 {
 						boardArray[i][2] = contents;
 						boardArray[i][3] = name;
 						boardArray[i][4] = String.valueOf(0);
-						if (i > end)
-							end++;
-						System.out.println(end);
 						number++;
 						break;
 					}
 				}
 			} else if (selectMenu == 3) {
 				System.out.print("번호: ");
-				int selectNumber = Integer.parseInt(scanner.nextLine());
+				String selectNumber = scanner.nextLine();
 
-				for (int i = 0; i <= end; i++) {
+				for (int i = 0; i <= 100; i++) {
 					if (boardArray[i][0] != null) {
-						if (Integer.parseInt(boardArray[i][0]) == selectNumber) {
+						if (boardArray[i][0].equals(selectNumber)) {
 							System.out.println();
-							System.out.println("제목: " + boardArray[selectNumber - 1][1]);
-							System.out.println("내용: " + boardArray[selectNumber - 1][2]);
-							System.out.println("글쓴이: " + boardArray[selectNumber - 1][3]);
-
-							int view = Integer.parseInt(boardArray[selectNumber - 1][4]) + 1;
+							System.out.println("제목: " + boardArray[i][1]);
+							System.out.println("내용: " + boardArray[i][2]);
+							System.out.println("글쓴이: " + boardArray[i][3]);
+							int view = Integer.parseInt(boardArray[i][4]) + 1;
 							System.out.println("조회수: " + view);
-							boardArray[selectNumber - 1][4] = String.valueOf(view);
+							boardArray[i][4] = String.valueOf(view);
 							break;
 						}
 					}
@@ -79,26 +74,25 @@ public class Teamprojects1 {
 			} else if (selectMenu == 4) {
 				System.out.println();
 				System.out.print("번호: ");
-				int selectNumber = Integer.parseInt(scanner.nextLine());
+				String selectNumber = scanner.nextLine();
 
-				for (int i = 0; i <= end; i++) {
+				for (int i = 0; i <= 100; i++) {
 					if (boardArray[i][0] != null) {
-						if (Integer.parseInt(boardArray[i][0]) == selectNumber) {
+						if (boardArray[i][0].equals(selectNumber)) {
 							System.out.println();
-							System.out.println("기존제목: " + boardArray[selectNumber - 1][1]);
+							System.out.println("기존제목: " + boardArray[i][1]);
 							System.out.print("수정제목: ");
 							String editTitle = scanner.nextLine();
 							if (!editTitle.equals("")) {
-								boardArray[selectNumber - 1][1] = editTitle;
+								boardArray[i][1] = editTitle;
 							}
 
-							System.out.println("기존내용: " + boardArray[selectNumber - 1][2]);
+							System.out.println("기존내용: " + boardArray[i][2]);
 							System.out.print("수정내용: ");
 							String editContent = scanner.nextLine();
 							if (!editContent.equals("")) {
-								boardArray[selectNumber - 1][2] = editContent;
+								boardArray[i][2] = editContent;
 							}
-
 							break;
 						}
 					}
@@ -108,24 +102,19 @@ public class Teamprojects1 {
 			} else if (selectMenu == 5) {
 				System.out.println();
 				System.out.print("번호: ");
-				int selectNumber = Integer.parseInt(scanner.nextLine());
+				String selectNumber = scanner.nextLine();
 
-				for (int i = 0; i <= end; i++) {
-					System.out.println(i);
+				for (int i = 0; i < 100; i++) {
 					if (boardArray[i][0] != null) {
-						if (Integer.parseInt(boardArray[i][0]) == selectNumber) {
+						if (boardArray[i][0].equals(selectNumber)) {
 							for (int k = 0; k < 5; k++) {
 								boardArray[i][k] = null;
 							}
-							if (end == i)
-								end--;
-							System.out.println("end@#@!#!@# : " + end);
 							break;
 						}
 					}
 				}
 
-//		
 			} else if (selectMenu == 6) {
 				break;
 			} else {
@@ -133,56 +122,54 @@ public class Teamprojects1 {
 				continue;
 			}
 			System.out.println();
-			System.out.println("---------------------------------------------------------------------");
+			System.out.println("----------------------------------------------------------------------");
 			System.out.println("   번호   |     제목     |          내용          |   글쓴이   |   조회수   ");
-			System.out.println("---------------------------------------------------------------------");
+			System.out.println("----------------------------------------------------------------------");
 
-			String[][] temp = new String[end + 1][5];
+			String[][] tempArray = new String[100][5];
 
-			System.arraycopy(boardArray, 0, temp, 0, end + 1);
-			for (int i = 0; i < end; i++) {
-				for (int j = i; j <= end; j++) {
-					if (boardArray[i][0] != null && boardArray[j][0] != null) {
-						if (Integer.parseInt(boardArray[i][0]) > Integer.parseInt(boardArray[j][0])) {
-							temp[i] = boardArray[j];
-							temp[j] = boardArray[i];
+			System.arraycopy(boardArray, 0, tempArray, 0, tempArray.length);
+
+			String[] temp; 
+			for (int i = 0; i < 99; i++) {
+				for (int k = i+1; k < 100; k++) {
+					if(tempArray[i][0] != null && tempArray[k][0] != null) {
+						if(Integer.parseInt(tempArray[i][0]) > Integer.parseInt(tempArray[k][0])) {
+							System.out.println(tempArray[i][0] + "   " + tempArray[k][0]);
+							temp = tempArray[k];
+							tempArray[k] = tempArray[i];
+							tempArray[i] = temp;
 						}
 					}
-				}    
-			}
-			for (int i = end; i >= 0; i--) {
-				if (temp[i][0] != null) {
-					System.out.print("      " + temp[i][0] + "   ");
-					System.out.print("       " + temp[i][1] + "      ");
-					System.out.print("          " + temp[i][2] + "     ");
-					System.out.print("         " + temp[i][3] + "");
-					System.out.println("      " + temp[i][4] + "   ");
-				}
-			}
-			System.out.println("-------------원본---------");
-			for (int i = end ; i >= 0; i--) {
-				if (boardArray[i][0] != null) {
-					System.out.print("   "+ i +"    " + boardArray[i][0] + "   ");
-					System.out.print("       " + boardArray[i][1] + "      ");
-					System.out.print("          " + boardArray[i][2] + "     ");
-					System.out.print("         " + boardArray[i][3] + "");
-					System.out.println("      " + boardArray[i][4] + "   ");
 				}
 			}
 
+			for (int i = 99; i >= 0; i--) {
+				if (tempArray[i][0] != null) {
+					for (String value : tempArray[i]) {
+						System.out.print(value + "\t");
+					}
+					System.out.println();
+				}
+			}
 			System.out.println();
-
+			System.out.println("원본 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			
+			for (int i = 99; i >= 0; i--) {
+				if (boardArray[i][0] != null) {
+					System.out.print(i + "      ");
+					for (String value : boardArray[i]) {
+						System.out.print(value + "\t");
+					}
+					System.out.println();
+				}
+			}
+			System.out.println();
 		}
 
 		System.out.println("프로그램 종료");
 
 	}
-	
-	
-	//....
-	//.x..
-	//.xx.
-	//.xxx
-	//이렇게 될 경우 end관리는?
+
 
 }
