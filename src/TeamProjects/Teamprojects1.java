@@ -153,8 +153,7 @@ public class Teamprojects1 {
 				}
 			}
 			System.out.println();
-			System.out.println("¿øº» ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-			
+						
 			for (int i = 99; i >= 0; i--) {
 				if (boardArray[i][0] != null) {
 					System.out.print(i + "      ");
