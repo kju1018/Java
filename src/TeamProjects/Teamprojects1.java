@@ -22,14 +22,12 @@ public class Teamprojects1 {
 			if (selectMenu.equals("1")) {
 
 			} else if (selectMenu.equals("2")) {
-
 				System.out.print("제목: ");
 				String title = scanner.nextLine();
 				System.out.print("내용: ");
 				String contents = scanner.nextLine();
 				System.out.print("글쓴이: ");
 				String name = scanner.nextLine();
-
 				for (int i = 0; i < boardArray.length; i++) {
 					if (boardArray[i][0] == null) {
 						boardArray[i][0] = String.valueOf(number);
@@ -61,7 +59,7 @@ public class Teamprojects1 {
 					}
 					if (i == 99) {
 						System.out.println("해당 번호의 글이 없습니다.");
-					}
+					}//
 				}
 				System.out.println();
 				continue;
@@ -119,6 +117,7 @@ public class Teamprojects1 {
 			} else if (selectMenu.equals("6")) {
 				break;
 			} else {
+				System.out.println("다시 입력해 주세요.");
 				System.out.println();
 				continue;
 			}
