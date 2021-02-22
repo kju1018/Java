@@ -46,18 +46,18 @@ public class Teamprojects1 {
 
 				for (int i = 0; i < 100; i++) {
 					if (boardArray[i][0] != null) {
-						if (boardArray[i][0].equals(selectNumber)) {
+						if (boardArray[i][0].equals(selectNumber)) {//글의 번호가 선택한 번호와 같을경우
 							System.out.println();
 							System.out.println("제목: " + boardArray[i][1]);
 							System.out.println("내용: " + boardArray[i][2]);
 							System.out.println("글쓴이: " + boardArray[i][3]);
-							int view = Integer.parseInt(boardArray[i][4]) + 1;
+							int view = Integer.parseInt(boardArray[i][4]) + 1; // 조회수 증가
 							System.out.println("조회수: " + view);
 							boardArray[i][4] = String.valueOf(view);
 							break;
 						}
 					}
-					if (i == 99) {
+					if (i == 99) {//만약 해당하는 글이 없을 경우
 						System.out.println("해당 번호의 글이 없습니다.");
 					} //
 				}
