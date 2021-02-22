@@ -9,7 +9,7 @@ public class Teamprojects1 {
 		String[][] boardArray = new String[100][5];
 		Scanner scanner = new Scanner(System.in);
 		int number = 1;// 다음 번호
-		int count = 0;
+		int count = 0; // 개수
 
 		while (run) {
 			System.out.println("--------------------------------------------------------------------------");
