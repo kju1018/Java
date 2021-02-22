@@ -34,7 +34,7 @@ public class Teamprojects1 {
 						boardArray[i][1] = title;
 						boardArray[i][2] = contents;
 						boardArray[i][3] = name;
-						boardArray[i][4] = String.valueOf(0);
+						boardArray[i][4] = "0";
 						number++;
 						count++;
 						break;
@@ -59,7 +59,7 @@ public class Teamprojects1 {
 					}
 					if (i == 99) {
 						System.out.println("해당 번호의 글이 없습니다.");
-					}//
+					} //
 				}
 				System.out.println();
 				continue;
@@ -79,7 +79,7 @@ public class Teamprojects1 {
 							if (!editTitle.equals("")) {
 								boardArray[i][1] = editTitle;
 							}
-							
+
 							System.out.println("기존내용: " + boardArray[i][2]);
 							System.out.print("수정내용: ");
 							String editContent = scanner.nextLine();
@@ -129,11 +129,11 @@ public class Teamprojects1 {
 			String[][] tempArray = new String[100][5];
 
 			System.arraycopy(boardArray, 0, tempArray, 0, tempArray.length);
-			
+
 			String[] temp;
 			if (count <= 0) {
 				System.out.println("글이 없습니다.");
-			} else {
+			} else if(count < 100){
 				for (int i = 0; i < 99; i++) {
 					for (int k = i + 1; k < 100; k++) {
 						if (tempArray[i][0] != null && tempArray[k][0] != null) {
