@@ -11,6 +11,8 @@ public class Example {
 
 //		FileInputStream fi = new FileInputStream("F:/Temp/file.txt"); 
 		//FileNotFoundException => 일반 예외(컴파일 체크 예외)
+		
+//		int value = Integer.parseInt(scanner.nextLine());
 	}
 
 }
