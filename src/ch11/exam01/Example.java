@@ -7,5 +7,17 @@ public class Example {
 		
 		System.out.println(m1 == m2);
 		System.out.println(m1.equals(m2));
+		
+		String a = "bbb";
+		String b = a;
+		String c = new String("aaa");
+		
+		System.out.println(a == b);
+		System.out.println(a == c);
+		System.out.println(b == c);
+		
+		System.out.println(a.compareTo(b));
+		System.out.println(a.compareTo(c));
+		System.out.println(b.compareTo(c));
 	}
 }
