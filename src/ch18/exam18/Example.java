@@ -13,7 +13,7 @@ public class Example {
 		
 		OutputStream os = new FileOutputStream(filePath1);
 		DataOutputStream dos = new DataOutputStream(os);
-		
+		//이건 3이 문자가 아니라 4바이트로 저장
 		dos.writeInt(3);
 		dos.writeDouble(10.5);
 		dos.writeBoolean(true);

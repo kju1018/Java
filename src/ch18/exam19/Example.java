@@ -24,8 +24,9 @@ public class Example {
 		PrintWriter out = new PrintWriter(os);
 		//Writer이면 PrintWriter
 		//OutputStream 이면 PrintStream, PrintWriter
-		out.println(data1);
-		out.println(data2);
+		out.println(3);
+		out.println(10.5);
+		//숫자여도 문자로 저장
 		out.flush();
 		os.close();
 
