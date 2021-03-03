@@ -11,6 +11,7 @@ public class Example {
 
 		Properties prop = new Properties();
 		String path = Example.class.getResource("database.properties").getPath();
+		//상대경로
 		prop.load(new FileReader(path));
 
 		String driver = prop.getProperty("driver");
