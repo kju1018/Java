@@ -28,7 +28,6 @@ public class Example14 {
 		} catch (FileNotFoundException e) {
 			
 		}
-
 	}
 
 }
